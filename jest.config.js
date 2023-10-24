@@ -102,7 +102,9 @@ const config = {
 
   // A preset that is used as a base for Jest's configuration
   // preset: undefined,
-
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['./setup-jest.ts'],
+  
   // Run tests from one or more projects
   // projects: undefined,
 
@@ -181,6 +183,11 @@ const config = {
   //   "\\\\node_modules\\\\",
   //   "\\.pnp\\.[^\\\\]+$"
   // ],
+
+  transformIgnorePatterns: [
+    "node_modules/(?!@angular)/",
+    'node_modules/(?!.*\\.mjs$)'
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
